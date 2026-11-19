@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f8f5eb">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Esplora la mappa del Perugia Game Track 2027.">
+  <title>AR map app · Perugia Game Track</title>
+  <link rel="stylesheet" href="./atlas.css">
+  <script type="module" src="./atlas.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main" data-copy="skip">Vai al contenuto</a>
+  <header class="mast">
+    <a class="brand" href="./"><span class="brand-mark" aria-hidden="true">✳</span><span>PERUGIA<br>GAME TRACK</span></a>
+    <span class="festival"><span>INTERNATIONAL JOURNALISM FESTIVAL</span><span>14–17 APR 2027</span></span>
+    <div class="languages" aria-label="Language">
+      <button type="button" lang="it" data-lang="it" aria-pressed="true">IT</button>
+      <button type="button" lang="en" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+  <main id="main" class="atlas">
+    <aside class="rail">
+      <div class="intro">
+        <p class="kicker"><span></span><span data-copy="edition">ANTEPRIMA · IJF 2027</span></p>
+        <h1>AR <br><em>map app</em></h1>
+        <p class="intro-copy" data-copy="intro">Cinque incontri di giornalismo giocabile nel centro storico. Scegli una tappa in qualsiasi ordine.</p>
+      </div>
+      <nav class="sections" aria-label="App">
+        <button type="button" data-view="map" aria-pressed="true" data-copy="map">Mappa</button>
+        <button type="button" data-view="list" aria-pressed="false" data-copy="stops">Tappe</button>
+        <button type="button" data-view="journal" aria-pressed="false"><span data-copy="journal">Taccuino</span><span id="count">0/5</span></button>
+      </nav>
+      <section class="rail-section" aria-labelledby="list-title">
+        <div class="list-heading"><h2 id="list-title" data-copy="stops">Tappe</h2><span data-copy="venueCount">1 ingresso + 5 incontri</span></div>
+        <ol id="stops" class="stop-list"></ol>
+      </section>
+      <a class="room-jump" href="#stanza" data-copy="roomJump">Stanza dei giochi →</a>
+    </aside>
+
+    <section id="map-view" class="workspace" aria-label="Mappa di Perugia">
+      <div class="workspace-head"><div><span class="head-dot"></span><strong data-copy="historic">Centro storico</strong></div><span data-copy="mapStatus">Sedi proposte</span></div>
+      <div id="map" class="map" tabindex="0" aria-label="Mappa di Perugia">
+        <svg id="map-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><image href="./map/perugia.svg" x="-200" y="-120" width="1400" height="1000"/></svg>
+        <div id="pins" class="pins"></div>
+        <span class="north" title="Nord" aria-hidden="true">N<br>↑</span>
+        <div class="map-controls">
+          <button type="button" data-zoom="in" data-label="zoomIn" aria-label="Ingrandisci">+</button>
+          <button type="button" data-zoom="out" data-label="zoomOut" aria-label="Riduci">−</button>
+          <button type="button" data-zoom="reset" data-label="reset" aria-label="Centra le tappe">◎</button>
+        </div>
+        <div id="scale" class="scale" aria-hidden="true"><span>100 m</span></div>
+        <a class="attribution" href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors</a>
+      </div>
+      <div id="selection"></div>
+    </section>
+
+    <section id="list-view" class="workspace" aria-labelledby="all-title" hidden>
+      <div class="workspace-head"><strong id="all-title" data-copy="stops">Tappe</strong><span data-copy="venueCount">1 ingresso + 5 incontri</span></div>
+      <ol id="all-stops" class="full-list"></ol>
+    </section>
+
+    <section id="journal-view" class="workspace journal" aria-labelledby="journal-title" hidden>
+      <div class="workspace-head"><strong data-copy="journal">Taccuino</strong><span data-copy="local">Salvato su questo dispositivo</span></div>
+      <div class="journal-body">
+        <h2 id="journal-title" data-copy="collected">Incontri raccolti</h2>
+        <p id="journal-empty" data-copy="empty">Completa un incontro per aggiungerlo al taccuino.</p>
+        <ol id="journal-items" class="stop-list"></ol>
+      </div>
+    </section>
+    <section id="stanza" class="room" aria-labelledby="room-title">
+      <div><p class="kicker" data-copy="roomStatus">SPAZIO IN ATTESA DI CONFERMA</p><h2 id="room-title" tabindex="-1" data-copy="roomTitle">La stanza dei giochi</h2></div>
+      <p data-copy="roomDescription">Se IJF ci assegnerà la stanza, sarà il punto d’incontro di tutto il percorso. Potrai ritrovare i giochi e provarli con calma. Lo spazio che abbiamo in mente è appartato e tranquillo, e IJF lo ha già usato per mostre e attività simili.</p>
+    </section>
+  </main>
+  <dialog id="stop-dialog" aria-labelledby="stop-title">
+    <div class="dialog-head"><span id="stop-kicker" class="kicker"></span><button type="button" data-close data-copy="close">Chiudi ×</button></div>
+    <div id="stop-content" class="dialog-body"></div>
+  </dialog>
+  <footer class="foot"><a href="https://www.journalismfestival.com/" target="_blank" rel="noopener">International Journalism Festival ↗</a><span data-copy="footer">Anteprima del percorso · Orari, accessi e sedi da confermare</span></footer>
+</body>
+</html>

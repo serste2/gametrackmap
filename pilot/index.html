@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Private image-recognition pilot for the IJF Perugia Game Track.">
+  <meta name="theme-color" content="#141817">
+  <meta name="robots" content="noindex, nofollow">
+  <title>The Bots Ridge · AR map app</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i="skip">Vai al contenuto</a>
+  <header class="mast wrap">
+    <a class="brand" href="../#tappa-bots-ridge" aria-label="Perugia Game Track"><span class="mark" aria-hidden="true">◈</span> PERUGIA GAME TRACK</a>
+    <div class="locale" aria-label="Language">
+      <button lang="it" type="button" data-lang="it" aria-pressed="true">IT</button>
+      <button lang="en" type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="title">
+      <div class="hero-copy">
+        <p class="eyebrow">IJF 2027 <span>·</span> CCIJ</p>
+        <h1 id="title">The Bots<br>Ridge<span>.</span></h1>
+        <p class="hero-text" data-i="intro">Inquadra un riferimento. Recupera il Data Fragment.</p>
+        <p class="place" data-i="place">Piazza Giacomo Matteotti · Tappa pilota</p>
+        <a class="primary hero-link" href="#scan" data-i="choose">Scegli l’inquadratura</a>
+      </div>
+      <figure class="hero-image">
+        <img src="../postcards/bots-ridge.webp" width="1184" height="840" alt="">
+        <figcaption data-i="illustration">Fronte della cartolina</figcaption>
+      </figure>
+    </section>
+
+    <section id="scan" class="scan-area" aria-labelledby="scan-title">
+      <div class="section-head">
+        <div><p class="eyebrow" data-i="pilot">Prova di riconoscimento</p><h2 id="scan-title" data-i="choose">Scegli l’inquadratura</h2></div>
+        <p data-i="sampleNotice">Queste sono immagini di prova. Apri il riferimento su un secondo schermo o stampalo e inquadralo. Le immagini di Perugia saranno verificate sul posto.</p>
+      </div>
+      <div class="target-grid">
+        <article class="target"><img src="./targets/landscape.jpg" width="800" height="168" alt="" loading="lazy"><div class="target-body">
+          <h3 data-i="landscape">Paesaggio urbano</h3><p data-i="landscapeCopy">Una veduta ampia, da un punto riconoscibile.</p>
+          <div class="target-actions"><button type="button" class="primary" data-scan="landscape" data-i="scanButton">Inquadra</button><a href="./targets/landscape.jpg" target="_blank" rel="noopener" data-i="guide">Apri riferimento ↗</a></div>
+        </div></article>
+        <article class="target"><img src="./targets/detail.jpg" width="450" height="570" alt="" loading="lazy"><div class="target-body">
+          <h3 data-i="detail">Dettaglio architettonico</h3><p data-i="detailCopy">Un elemento preciso, da inquadrare da fermo.</p>
+          <div class="target-actions"><button type="button" class="primary" data-scan="detail" data-i="scanButton">Inquadra</button><a href="./targets/detail.jpg" target="_blank" rel="noopener" data-i="guide">Apri riferimento ↗</a></div>
+        </div></article>
+        <article class="target"><img src="../postcards/bots-ridge.webp" width="1184" height="840" alt="" loading="lazy"><div class="target-body">
+          <h3 data-i="postcard">Cartolina</h3><p data-i="postcardCopy">Lo stesso incontro, attivato dall’immagine stampata.</p>
+          <div class="target-actions"><button type="button" class="primary" data-scan="postcard" data-i="scanButton">Inquadra</button><a href="../postcards/bots-ridge.webp" target="_blank" rel="noopener" data-i="guide">Apri riferimento ↗</a></div>
+        </div></article>
+      </div>
+      <div class="fallback"><button class="text-button" type="button" data-fallback data-i="fallback">Continua senza camera →</button><p data-i="privacy">I fotogrammi restano sul dispositivo. L’app non li registra né li invia.</p></div>
+    </section>
+
+    <section id="encounter" class="encounter" aria-labelledby="encounter-title" hidden>
+      <p id="encounter-method" class="eyebrow"></p>
+      <h2 id="encounter-title" tabindex="-1">Data Fragment</h2>
+      <p data-i="clue">Un frammento è una traccia da verificare. Che cosa controlleresti prima di usarla in un’inchiesta?</p>
+      <div class="encounter-actions"><button id="collect" class="primary" type="button" data-i="collect">Raccogli il frammento</button><span id="progress" role="status"></span></div>
+      <p class="related"><a class="text-link" href="https://www.fortnite.com/%40ccij/6120-3593-0647" target="_blank" rel="noopener" data-i="related">Esplora The Data Vault Canyon su Fortnite ↗</a></p>
+      <a class="text-link" href="#scan" data-i="tryAnother">Prova un’altra inquadratura ↑</a>
+    </section>
+
+    <p class="room-link"><a class="text-link" href="../#stanza" data-i="room">Stanza dei giochi · sede da confermare →</a></p>
+
+    <details class="route">
+      <summary data-i="route">Percorso proposto per il festival</summary>
+      <p data-i="routeNote">La prova interattiva è disponibile alla tappa CCIJ. Le sedi delle tappe sono proposte.</p>
+      <ol>
+        <li>Teatro Pavone <span data-i="entry">Ingresso</span></li>
+        <li>Hotel Brufani <span>Dark Money</span></li>
+        <li>Via Giuseppe Mazzini 10 <span>Kleptocrat</span></li>
+        <li>Rocca Paolina <span>Ciudad Perdida</span></li>
+        <li>Piazza IV Novembre <span>Investigative Simulations Lab</span></li>
+        <li>Piazza Giacomo Matteotti <a href="#scan">The Bots Ridge ↗</a></li>
+      </ol>
+    </details>
+  </main>
+  <dialog id="scanner" aria-labelledby="scanner-title">
+    <div class="dialog-head"><h2 id="scanner-title"></h2><button id="close" type="button" class="text-button" data-i="close">Chiudi</button></div>
+    <div class="viewfinder">
+      <video id="camera" autoplay muted playsinline aria-hidden="true"></video>
+      <div class="view-frame" aria-hidden="true"></div>
+      <img id="postcard-reveal" src="../postcards/bots-ridge.webp" width="1184" height="840" alt="" aria-hidden="true">
+    </div>
+    <p id="camera-status" role="status" aria-live="polite"></p>
+    <div class="scanner-actions"><button type="button" class="text-button" data-scan="postcard" data-i="tryCard">Prova la cartolina</button><button type="button" class="text-button" data-fallback data-i="fallback">Continua senza camera →</button></div>
+  </dialog>
+  <footer class="wrap">PERUGIA <span>·</span> 14–17 APR 2027 <span>·</span> CCIJ</footer>
+</body>
+</html>
