@@ -101,13 +101,3 @@ body:not([data-view=map]) .rail-section{display:none}
 .full-list .stop-text strong{font:normal 1.42rem/1.1 Georgia,serif}
 .full-list .stop-text small{margin-top:.2rem}
 @media(max-width:700px){.full-list{grid-template-columns:1fr;padding:.55rem;gap:.4rem}.full-list button{min-height:70px}.full-list .stop-text strong{font-size:1.25rem}}
-
-.room-jump{display:inline-block;margin-top:.85rem;font-weight:700;color:var(--green);font-size:.85rem}
-.room{grid-column:1/-1;display:grid;grid-template-columns:minmax(220px,355px) minmax(0,1fr);gap:.8rem 1.7rem;align-items:center;border:1px solid var(--line);background:var(--card);padding:1.1rem 1.25rem;scroll-margin-top:1rem}
-.room h2{font:normal clamp(1.8rem,3.4vw,2.65rem)/1.1 Georgia,serif}
-.room .kicker{margin-bottom:.32rem}
-.room p:not(.kicker){max-width:67ch;color:var(--muted);font-size:.92rem}
-.stop-room{padding:.6rem .75rem;margin:.75rem 0;background:#edf0e1;border-left:3px solid var(--green)}
-.stop-room p{margin:0 0 .35rem;font-size:.85rem}
-.stop-room .action{border-color:#a4ad99}
-@media(max-width:700px){.room{grid-template-columns:1fr;margin-top:.8rem;padding:.85rem}.room-jump{margin:0 0 .65rem}}

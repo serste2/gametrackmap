@@ -67,5 +67,3 @@ video{width:100%;height:100%;object-fit:contain}
 #camera-status{min-height:2.7em}
 @media(max-width:760px){.wrap{width:calc(100% - 1.5rem)}.hero{grid-template-columns:1fr;min-height:0;margin-bottom:2rem}.hero-image{min-height:210px}.section-head{grid-template-columns:1fr;gap:.55rem}.target-grid{grid-template-columns:1fr}.target{display:grid;grid-template-columns:minmax(100px,.7fr) 1fr}.target>img{height:100%;min-height:125px;max-height:170px}.brand{font-size:.76rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-
-.room-link{margin-top:1.1rem}

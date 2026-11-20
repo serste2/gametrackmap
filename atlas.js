@@ -15,11 +15,6 @@ const ui = {
   step:['TAPPA','STOP'], sample:['Incontro dimostrativo · Senza camera','Sample encounter · Camera-free'],
   add:['Aggiungi al taccuino','Add to notebook'], added:['Nel taccuino ✓','In notebook ✓'],
   postcardGuide:['Scorcio illustrato · Fronte della cartolina','Illustrated view · Postcard front'],
-  roomTitle:['La stanza dei giochi','The games room'],
-  roomJump:['Stanza dei giochi →','Games room →'],
-  roomStatus:['SPAZIO IN ATTESA DI CONFERMA','VENUE PENDING CONFIRMATION'],
-  roomDescription:['Se IJF ci assegnerà la stanza, sarà il punto d’incontro di tutto il percorso. Potrai ritrovare i giochi e provarli con calma. Lo spazio che abbiamo in mente è appartato e tranquillo, e IJF lo ha già usato per mostre e attività simili.','If IJF allocates the room, it will be the meeting point for the whole trail. You can find the games there and try them at your own pace. The space we have in mind is quiet and tucked away, and IJF has used it for exhibitions and similar events.'],
-  roomInvite:['Continua nella stanza dei giochi, se confermata.','Continue in the games room, if confirmed.'],
   pilot:['Apri il pilota AR ↗','Open the AR pilot ↗'], saveFailed:['Salvato per questa sessione.','Saved for this session.'],
 };
 
@@ -322,11 +317,7 @@ function renderStop() {
     modal.append(el('p',stop.team,'dialog-place'),el('p',t('sample'),'demo-note'),renderEncounter(stop));
     if(stop.pilot) links.append(link(t('pilot'),'./pilot/'));
   }
-  const invitation=el('div',null,'stop-room');
-  const roomLink=link(t('roomJump'),'#stanza');
-  roomLink.addEventListener('click',()=>dialog.close());
-  invitation.append(el('p',t('roomInvite')),roomLink);
-  modal.append(invitation,links);
+  modal.append(links);
 }
 
 function openStop(stop, update=true) {
@@ -366,7 +357,6 @@ dialog.addEventListener('close',()=>{
   const prior=current;
   current=null;
   if(location.hash.startsWith('#tappa-')) history.replaceState(null,'',location.pathname+location.search);
-  if(location.hash==='#stanza') return;
   if(view==='map' && prior) markerButton.get(prior.id)?.focus({preventScroll:true});
   else if(prior) document.querySelector(`#${view}-view button[aria-current=true]`)?.focus({preventScroll:true});
 });
